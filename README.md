@@ -10,7 +10,7 @@ docker run -d --name user-db -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgr
 ```bash
 mvn clean package
 cd api/target
-java -jar image-catalog-api-1.0.0-SNAPSHOT.jar
+java -jar user-api-1.0.0-SNAPSHOT.jar
 ```
 Available at: localhost:8080/v1/vehicles
 
