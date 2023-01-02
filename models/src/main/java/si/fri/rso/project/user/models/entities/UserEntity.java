@@ -8,7 +8,9 @@ import java.time.Instant;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "UserEntity.getAll",
-                        query = "SELECT im FROM UserEntity im")
+                        query = "SELECT im FROM UserEntity im"),
+                @NamedQuery(name = "UserEntity.userLogin",
+                        query = "SELECT im FROM UserEntity im WHERE im.username = ?1 AND im.password = ?2")
         })
 public class UserEntity {
 

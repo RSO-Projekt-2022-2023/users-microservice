@@ -1,5 +1,6 @@
 package si.fri.rso.project.user.api.v1.resources;
 
+import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import netscape.javascript.JSObject;
 import okhttp3.OkHttpClient;
 import org.eclipse.microprofile.openapi.annotations.Operation;
@@ -39,6 +40,7 @@ import java.util.logging.Logger;
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@CrossOrigin(allowOrigin = "*")
 public class UserResource {
 
     private Logger log = Logger.getLogger(UserResource.class.getName());
@@ -84,6 +86,31 @@ public class UserResource {
         }
 
         return Response.status(Response.Status.OK).entity(user).build();
+    }
+
+
+    @Operation(description = "User Login.", summary = "User login")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "User data",
+                    content = @Content(
+                            schema = @Schema(implementation = User.class))
+            )})
+    @POST
+    @Path("/login")
+    public Response userLogin(@RequestBody(
+            description = "DTO object with user data.",
+            required = true, content = @Content(
+            schema = @Schema(implementation = User.class))) User user) {
+
+
+        User user1 = userBean.userLogin(user);
+
+        if (user1 == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+
+        return Response.status(Response.Status.OK).entity(user1).build();
     }
 
     @Operation(description = "Add user data.", summary = "Add user data")

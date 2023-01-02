@@ -44,6 +44,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.kumuluz.ee.cors</groupId>
+            <artifactId>kumuluzee-cors</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>si.fri.rso.project</groupId>
             <artifactId>user-services</artifactId>
         </dependency>

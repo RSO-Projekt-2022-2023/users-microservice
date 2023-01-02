@@ -59,6 +59,19 @@ public class UserBean {
         return user;
     }
 
+    public User userLogin(User user){
+        TypedQuery<UserEntity> query = em.createNamedQuery(
+                "UserEntity.userLogin", UserEntity.class).setParameter(1, user.getUsername()).setParameter(2, user.getPassword());
+
+        List<UserEntity> userEntityList = query.getResultList();
+        if(userEntityList.isEmpty()){
+            return null;
+        }
+        User user1 = UserConverter.toDto(userEntityList.get(0));
+        return user1;
+
+    }
+
     public User createUser(User user) {
 
         UserEntity userEntity = UserConverter.toEntity(user);
