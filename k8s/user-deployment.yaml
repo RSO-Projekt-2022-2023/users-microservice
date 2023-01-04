@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vehicle-deployment
+  name: user-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vehicle
+      app: user
   template:
     metadata:
       labels:
-        app: vehicle
+        app: user
     spec:
       containers:
-        - image: burton588/vehicle-api-image:2022-11-26-18-18-14
-          name: vehicle
+        - image: burton588/user-api-image:2022-11-26-18-18-14
+          name: user
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
               value: jdbc:postgresql://peanut.db.elephantsql.com:5432/hiiixqwm
@@ -44,7 +44,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: vehicle
+  name: user
 spec:
   type: LoadBalancer
   ports:
@@ -52,4 +52,4 @@ spec:
       protocol: TCP
       targetPort: server
   selector:
-    app: vehicle
+    app: user
