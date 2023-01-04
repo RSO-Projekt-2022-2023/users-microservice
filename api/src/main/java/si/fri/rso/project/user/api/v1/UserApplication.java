@@ -16,7 +16,7 @@ import org.eclipse.microprofile.openapi.annotations.servers.Server;
         license = @License(name = "dev"), description = "API for managing user data."),
         servers = @Server(url = "http://localhost:8080/"))
 @ApplicationPath("/v1")
-@CrossOrigin
+@CrossOrigin(supportedMethods = "GET, POST, HEAD, OPTIONS, PUT, DELETE")
 public class UserApplication extends Application {
 
 }

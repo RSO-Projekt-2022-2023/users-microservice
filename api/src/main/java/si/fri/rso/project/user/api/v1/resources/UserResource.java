@@ -1,6 +1,7 @@
 package si.fri.rso.project.user.api.v1.resources;
 
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
+import com.kumuluz.ee.logs.cdi.Log;
 import netscape.javascript.JSObject;
 import okhttp3.OkHttpClient;
 import org.eclipse.microprofile.openapi.annotations.Operation;
@@ -37,10 +38,11 @@ import java.util.logging.Logger;
 
 
 @ApplicationScoped
+@Log
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@CrossOrigin(allowOrigin = "*")
+@CrossOrigin(supportedMethods = "GET, POST, HEAD, OPTIONS, PUT, DELETE")
 public class UserResource {
 
     private Logger log = Logger.getLogger(UserResource.class.getName());
