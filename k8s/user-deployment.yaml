@@ -13,7 +13,7 @@ spec:
         app: user
     spec:
       containers:
-        - image: burton588/user-api-image:2022-11-26-18-18-14
+        - image: burton588/user-api-image:2023-01-07-20-27-00
           name: user
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
@@ -46,7 +46,7 @@ kind: Service
 metadata:
   name: user
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 8080
       protocol: TCP

@@ -9,9 +9,9 @@ kumuluzee:
       port: 8080
   datasources:
     - jndi-name: jdbc/UsersDB
-      connection-url: jdbc:postgresql://peanut.db.elephantsql.com:5432/hiiixqwm
-      username: hiiixqwm
-      password: nsIpDZRNA5slbNFPLlkY20WzKDOqHVoN
+      connection-url: jdbc:postgresql://localhost:5432/users
+      username: dbuser
+      password: postgres
       max-pool-size: 20
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
@@ -20,8 +20,7 @@ kumuluzee:
                                   <Console name="console" target="SYSTEM_OUT">
                                       <PatternLayout pattern="%d %p %marker %m %X %ex %n"/>
                                   </Console>
-                                  <Socket name="logstash" host="707a9b69-5203-4416-a606-408efead7b29-ls.logit.io"
-                                  port="23759" protocol="udp">
+                                  <Socket name="logstash" host="0174a08c-8d63-4e43-a5b3-855e2865241e-ls.logit.io" port="18985" protocol="udp">
                                       <JSONLayout complete="false" compact="true" eventEol="true" charset="UTF-8" properties="true"/>
                                   </Socket>
                               </Appenders>

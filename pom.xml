@@ -31,6 +31,7 @@
         <kumuluzee-logs.version>1.4.6</kumuluzee-logs.version>
         <kumuluzee-cors.version>1.0.6</kumuluzee-cors.version>
         <kumuluzee-health.version>2.4.3</kumuluzee-health.version>
+        <kumuluzee-fault-tolerance.version>2.1.1</kumuluzee-fault-tolerance.version>
     </properties>
 
     <dependencyManagement>
@@ -103,6 +104,13 @@
                 <artifactId>kumuluzee-health</artifactId>
                 <version>${kumuluzee-health.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.kumuluz.ee.fault.tolerance</groupId>
+                <artifactId>kumuluzee-fault-tolerance-smallrye</artifactId>
+                <version>${kumuluzee-fault-tolerance.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>si.fri.rso.project</groupId>

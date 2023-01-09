@@ -69,6 +69,11 @@
             <version>3.12.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.kumuluz.ee.fault.tolerance</groupId>
+            <artifactId>kumuluzee-fault-tolerance-smallrye</artifactId>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
